@@ -33,10 +33,28 @@ def create_tables():
     except(psycopg2.DatabaseError, Exception) as error:
         print(error)
 
+def insert_category(category_name):
+    sql = """INSERT INTO categories(category_name)
+    VALUES(%s) RETURNING category_id;"""
+    config = load_config()
+    category_id = None
+    try:
+        with psycopg2.connect(**config) as conn:
+            with conn.cursor() as cur:
+                cur.execute(sql, (category_name,))
+                rows = cur.fetchone()
+                if rows:
+                    category_id = rows[0]
+                conn.commit()
+    except(Exception, psycopg2.DatabaseError) as error:
+        print(error)
+    finally:
+        return category_id
 
 class HomePageView(TemplateView):
     template_name = "index.html"
-    create_tables()
+    insert_category("Horror")
+    
 
 
 
