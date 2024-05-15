@@ -51,9 +51,27 @@ def insert_category(category_name):
     finally:
         return category_id
 
+def update_category(category_name, category_id):
+    updated_row_count = 0
+    sql = """UPDATE categories
+                SET category_name = %s
+                WHERE category_id = %s"""
+    config = load_config()
+    try:
+        with psycopg2.connect(**config) as conn:
+            with conn.cursor() as cur:
+                cur.execute(sql, (category_name, category_id))
+                updated_row_count = cur.rowcount
+            conn.commit()
+    except(Exception, psycopg2.DatabaseError ) as error:
+        print(error)    
+    finally:
+        return updated_row_count
+    
+
 class HomePageView(TemplateView):
     template_name = "index.html"
-    insert_category("Horror")
+    update_category("Horror", 3)
     
 
 
