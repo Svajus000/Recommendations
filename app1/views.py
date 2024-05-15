@@ -67,11 +67,27 @@ def update_category(category_name, category_id):
         print(error)    
     finally:
         return updated_row_count
+
+def get_categories():
+    config = load_config()
+    try:
+        with psycopg2.connect(**config) as conn:
+            with conn.cursor() as cursor:
+                cursor.execute("SELECT category_id, category_name FROM categories ORDER BY category_name")
+                print("", cursor.rowcount)
+                row = cursor.fetchone()
+
+                while row is not None:
+                    print(row)
+                    row = cursor.fetchone()
+    except(Exception,psycopg2.DatabaseError) as error:
+        print(error)
     
+
 
 class HomePageView(TemplateView):
     template_name = "index.html"
-    update_category("Horror", 3)
+    get_categories()
     
 
 
