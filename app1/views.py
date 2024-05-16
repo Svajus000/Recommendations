@@ -3,24 +3,23 @@ from django.views.generic import TemplateView
 # Create your views here.
 import psycopg2
 from config import load_config
+import csv
 
 def create_tables():
     commands = (
         """
-        CREATE TABLE categories (
-            category_id SERIAL PRIMARY KEY,
-            category_name VARCHAR(255) NOT NULL
-            )
-""","""
-        CREATE TABLE films (
-        film_id SERIAL PRIMARY KEY,
-        film_name VARCHAR(255) NOT NULL,
-        FOREIGN KEY (film_id)
-        REFERENCES categories (category_id)
-        ON UPDATE CASCADE ON DELETE CASCADE
-        )
-"""
+        CREATE TABLE airline_customer_satisfaction (
+            airline_customer_id SERIAL PRIMARY KEY,
+            satisfaction VARCHAR(255) NOT NULL,
+            customer_type VARCHAR(255),
+            age INTEGER,
+            type_of_travel VARCHAR(255),
+            class VARCHAR(255),
+            flight_distance INTEGER
+            );
+""",
     )
+    # Flight Distance,Seat comfort,Departure/Arrival time convenient,Food and drink,Gate location,Inflight wifi service,Inflight entertainment,Online support,Ease of Online booking,On-board service,Leg room service,Baggage handling,Checkin service,Cleanliness,Online boarding,Departure Delay in Minutes,Arrival Delay in Minutes
     try:
         config = load_config()
         with psycopg2.connect(**config) as conn:
@@ -85,9 +84,32 @@ def get_categories():
     
 
 
+    
+
+    input_file = 'C:\\Users\\svaju\\Downloads\\archive\\Airline_customer_satisfaction.csv'
+    output_file = 'C:\\Users\\svaju\\Downloads\\archive\\Airline_customer_satisfaction_filtered.csv'
+
+    desired_columns = ['satisfaction', 'Customer Type', 'Age', 'Type of Travel', 'Class', 'Flight Distance']
+
+    # Adjust these indices to match your desired columns' positions in the CSV file
+    desired_indices = [0, 1, 2, 3, 4, 5]  # Example indices, adjust as needed
+
+    with open(input_file, 'r') as infile, open(output_file, 'w', newline='') as outfile:
+        reader = csv.reader(infile)
+        writer = csv.writer(outfile)
+        
+        header = next(reader)
+        writer.writerow([header[i] for i in desired_indices])
+        
+        for row in reader:
+            writer.writerow([row[i] for i in desired_indices])
+
+    print("Filtered CSV file created successfully.")
+
+
 class HomePageView(TemplateView):
     template_name = "index.html"
-    get_categories()
+   
     
 
 
