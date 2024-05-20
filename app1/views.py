@@ -109,7 +109,7 @@ def get_categories():
 
 class HomePageView(TemplateView):
     template_name = "index.html"
-   
+
     
 
 
