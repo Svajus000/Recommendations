@@ -14,6 +14,7 @@ class Film(models.Model):
     film_name = models.CharField(max_length=50)
     rating = models.IntegerField()
     date = models.DateField()
+    image = models.ImageField()
     category = models.ForeignKey(Category, on_delete=models.CASCADE)
 
     def __str__(self) -> str:

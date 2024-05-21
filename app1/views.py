@@ -1,9 +1,12 @@
 from django.shortcuts import render
-from django.views.generic import TemplateView 
+from django.views.generic import TemplateView, ListView
 # Create your views here.
 import psycopg2
 from config import load_config
 import csv
+from .serializers import FilmSerializer
+from rest_framework import generics
+from .models import Film
 
 def create_tables():
     commands = (
@@ -110,7 +113,20 @@ def get_categories():
 class HomePageView(TemplateView):
     template_name = "index.html"
 
+class CreateView(generics.ListCreateAPIView):
+    template_name = "index.html"
+    queryset = Film.objects.all()
+    serializer_class = FilmSerializer
     
+
+class ReadView(ListView):
+    pass
+
+class UpdateView(TemplateView):
+    pass
+
+class DeleteView(TemplateView):
+    pass
 
 
 
