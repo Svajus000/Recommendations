@@ -114,13 +114,13 @@ class HomePageView(TemplateView):
     template_name = "index.html"
 
 class CreateView(generics.ListCreateAPIView):
-    template_name = "index.html"
     queryset = Film.objects.all()
     serializer_class = FilmSerializer
     
 
-class ReadView(ListView):
-    pass
+class ReadView(generics.RetrieveUpdateDestroyAPIView):
+    queryset = Film.objects.all()
+    serializer_class = FilmSerializer
 
 class UpdateView(TemplateView):
     pass
