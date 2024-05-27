@@ -110,23 +110,15 @@ def get_categories():
     print("Filtered CSV file created successfully.")
 
 
-class HomePageView(TemplateView):
-    template_name = "index.html"
+class LoginView(TemplateView):
+    template_name = "login.html"
 
 class CreateView(generics.ListCreateAPIView):
     queryset = Film.objects.all()
     serializer_class = FilmSerializer
     
 
-class ReadView(generics.RetrieveUpdateDestroyAPIView):
-    queryset = Film.objects.all()
-    serializer_class = FilmSerializer
 
-class UpdateView(TemplateView):
-    pass
-
-class DeleteView(TemplateView):
-    pass
 
 
 
