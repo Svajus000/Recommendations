@@ -19,7 +19,8 @@ class CreateView(generics.ListCreateAPIView):
     queryset = Film.objects.all()
     serializer_class = FilmSerializer
     
-
+class CreateFilmView(TemplateView):
+    template_name = "createFilm.html"
 
 
 
