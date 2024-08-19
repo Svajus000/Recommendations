@@ -1,0 +1,74 @@
+/* COLORS */
+/* #000000 */
+/* #1D1D1D */
+/* #3A3A3A */
+/* #575757 */
+/* #757575 */
+/* #919191 */
+/* #AFAFAF */
+
+.header-section {
+  display: flex;
+  width: 100vw;
+  height: 94vh;
+  background-color: black;
+  justify-content: center;
+  align-items: center;
+}
+
+.header {
+  width: 60%;
+  height: 100%;
+  background-color: #0f0f0f85;
+  padding: 0 2rem;
+}
+
+.heading {
+  margin: 2rem 2rem;
+  color: white;
+}
+
+.card {
+  display: inline-block;
+  width: 12rem;
+  height: 18rem;
+  margin: 2rem;
+  padding: 0;
+  border: 0;
+  opacity: 5%;
+}
+
+.card-body {
+  height: 100%;
+  width: 100%;
+  padding: 0;
+  background-color: white;
+}
+
+.add-film {
+  display: flex;
+  height: 100%;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+}
+
+.add-film:hover,
+.card-body:hover {
+  filter: brightness(70%);
+}
+
+.plus {
+  display: flex;
+  height: 15%;
+  width: 23%;
+  background-color: #0f0f0f85;
+  color: white;
+  filter: brightness(70%);
+  border-radius: 50%;
+  font-size: 2rem;
+  align-items: center;
+  justify-content: center;
+  padding-bottom: 5px;
+}

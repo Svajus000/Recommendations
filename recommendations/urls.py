@@ -17,11 +17,12 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 from app1.views import LoginView
-
+from app1.views import LandingView
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', LoginView.as_view(), name="home"),
+    path('', LandingView.as_view(), name="landing"),
+    path('login/', LoginView.as_view(), name="login"),
     path('api/', include('app1.urls'))
 
 ]
