@@ -11,6 +11,12 @@
       integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
       crossorigin="anonymous"
     />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="{% static 'css/landing.css' %}" />
   </head>
   <body>
@@ -31,102 +37,39 @@
         >
           <span class="navbar-toggler-icon"></span>
         </button>
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-            <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="#">Home</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Link</a>
-            </li>
-            <li class="nav-item dropdown">
-              <a
-                class="nav-link dropdown-toggle"
-                href="#"
-                role="button"
-                data-bs-toggle="dropdown"
-                aria-expanded="false"
-              >
-                Dropdown
-              </a>
-              <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="#">Action</a></li>
-                <li><a class="dropdown-item" href="#">Another action</a></li>
-                <li><hr class="dropdown-divider" /></li>
-                <li>
-                  <a class="dropdown-item" href="#">Something else here</a>
-                </li>
-              </ul>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link disabled" aria-disabled="true">Disabled</a>
-            </li>
-          </ul>
-          <form class="d-flex" role="search">
-            <input
-              class="form-control me-2"
-              type="search"
-              placeholder="Search"
-              aria-label="Search"
-            />
-            <button class="btn btn-outline-success" type="submit">
-              Search
-            </button>
-          </form>
-        </div>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent"></div>
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="#">Login</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Register</a>
+          </li>
+        </ul>
       </div>
     </nav>
     <!-- <--------------------------------------------------------------------------------------------------------------------->
     <div class="header-section">
-      <div class="header">
-        <h1 class="heading">Film recommendations</h1>
-        <div class="row row-cols-4">
-          <div class="col">
-            <div class="card">
-              <div class="card-body">
-                <a href="createfilm" class="add-film"
-                  ><div class="plus">+</div></a
-                >
-              </div>
-            </div>
-          </div>
-          <div class="col">
-            <div class="card">
-              <div class="card-body">
-                <a href="createfilm" class="add-film"
-                  ><div class="plus">+</div></a
-                >
-              </div>
-            </div>
-          </div>
-          <div class="col">
-            <div class="card">
-              <div class="card-body">
-                <a href="createfilm" class="add-film"
-                  ><div class="plus">+</div></a
-                >
-              </div>
-            </div>
-          </div>
-          <div class="col">
-            <div class="card">
-              <div class="card-body">
-                <a href="createfilm" class="add-film"
-                  ><div class="plus">+</div></a
-                >
-              </div>
-            </div>
-          </div>
-          <div class="col">
-            <div class="card">
-              <div class="card-body">
-                <a href="#" class="add-film"><div class="plus">+</div></a>
-              </div>
-            </div>
-          </div>
+      <div class="left-side">
+        <div class="container">
+          <h1 class="heading">
+            <b
+              >Craft Your Own Film List<br />
+              and Explore New Faves</b
+            >
+          </h1>
+
+          <p class="subheading">
+            Create personalized movie lists tailored to your tastes and discover
+            hidden <br />gems recommended by fellow film lovers. Start your
+            cinematic journey today and find your next favorite film!
+          </p>
+          <a href="#" class="call-to">Explore</a>
         </div>
       </div>
+      <div class="right-side"></div>
     </div>
+
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"

@@ -8,9 +8,11 @@ from .serializers import FilmSerializer
 from rest_framework import generics
 from .models import Film
 
-    
 class LandingView(TemplateView):
-    template_name = 'landing.html'
+    template_name = "landing.html"
+
+class CreateRecommendationView(TemplateView):
+    template_name = "createRecommendation.html"
 
 class LoginView(TemplateView):
     template_name = "login.html"
