@@ -3,12 +3,21 @@
   padding: 0;
 }
 
+.header-section {
+  display: flex;
+  width: 100vw;
+  height: 94vh;
+  background-image: url("../images/background_clean.jpg");
+  background-size: cover;
+  background-position-y: -8rem;
+  font-family: "Roboto", sans-serif;
+  font-style: italic;
+  align-items: center;
+  justify-content: center;
+}
+
 .header {
   display: flex;
-  height: 100vh;
-  width: 100vw;
-  justify-content: center;
-  align-items: center;
 }
 
 .form_container {
@@ -17,7 +26,7 @@
   align-items: center;
   height: 40rem;
   width: 30rem;
-  background-color: wheat;
+  background-color: #fbbd68;
 }
 
 .form_header {
