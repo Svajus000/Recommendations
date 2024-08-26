@@ -32,26 +32,20 @@
 
 .form_header {
   margin-top: 4rem;
-  margin-bottom: 6rem;
+  margin-bottom: 4rem;
   font-weight: 600;
 }
 
-.email_input_container {
+.input_container {
   width: 60%;
-}
-
-.email_input {
-}
-
-.password_input_container {
-  width: 60%;
-  margin-bottom: 2rem;
+  margin-bottom: 1.75rem;
 }
 
 .submit_button {
   width: 60%;
   background-color: #fbbd68;
   border-color: #fbbd68;
+  margin-top: 0.75rem;
 }
 
 .submit_button:hover {

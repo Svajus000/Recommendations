@@ -17,6 +17,9 @@ class CreateRecommendationView(TemplateView):
 class LoginView(TemplateView):
     template_name = "login.html"
 
+class RegisterView(TemplateView):
+    template_name = "register.html"
+    
 class CreateView(generics.ListCreateAPIView):
     queryset = Film.objects.all()
     serializer_class = FilmSerializer
