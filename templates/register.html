@@ -48,30 +48,36 @@
         <!-- <--------------------------------------------------------------------------------------------------------------------->
         <div class="header-section">
           <div class="header">
-            <form class="form_container">
+            <form class="form_container" method="post" action="#">
+              {% csrf_token %}
+            
+             
               <h1 class="form_header">Sign Up</h1>
               <div class="mb-3 input_container">
-
-                <label for="InputFirstName" class="form-label">First Name</label>
-                <input type="text" class="form-control email_input" id="exampleInputFirstName"/>
-    
-              </div>
-
-              <div class="mb-3 input_container">
-              <label for="InputLastName" class="form-label">Last Name</label>
-              <input type="text" class="form-control last_name_input" id="InputLastName"/>
-              </div>
-
-              <div class="mb-3 input_container">
-              <label for="InputEmail" class="form-label">Email address</label>
-              <input type="email" class="form-control email_input" id="InputEmail"/>
+                <label for="{{ form.first_name.id_for_label }}" class="form-label">{{ form.first_name.label }}</label>
+                {{ form.first_name }}
+                {{ form.first_name.errors }}
             </div>
 
               <div class="mb-3 input_container">
-                <label for="InputPassword" class="form-label">Password</label>
-                <input type="password" class="form-control password_input" id="InputPassword"/>
+                <label for="{{ form.last_name.id_for_label }}" class="form-label">{{ form.last_name.label }}</label>
+                {{ form.last_name }}
+                {{ form.last_name.errors }}
               </div>
-    
+
+              <div class="mb-3 input_container">
+                <label for="{{ form.email.id_for_label }}" class="form-label">{{ form.email.label }}</label>
+                {{ form.email }}
+                {{ form.email.errors }}
+              </div>
+
+              <div class="mb-3 input_container">
+                <label for="{{ form.password.id_for_label }}" class="form-label">{{ form.password.label }}</label>
+                {{ form.password }}
+                {{ form.password.errors }}
+              </div>
+             
+
               <button type="submit" class="btn btn-primary submit_button">
                 Sign Up
               </button>

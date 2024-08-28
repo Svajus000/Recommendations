@@ -20,7 +20,7 @@ from app1.views import LoginView, RegisterView, CreateRecommendationView, Create
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', LandingView.as_view(), name="landing"),
+    path('', LandingView.as_view(), name="home"),
     path('createRecommendation/', CreateRecommendationView.as_view(), name="createRecommendation"),
     path('register/', RegisterView.as_view(), name="register"),
     path('login/', LoginView.as_view(), name="login"),

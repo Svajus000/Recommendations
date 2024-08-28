@@ -1,5 +1,5 @@
 from django.db import models
-
+from django.forms import ModelForm
 # Create your models here.
 
 class Category(models.Model):
@@ -19,3 +19,10 @@ class Film(models.Model):
 
     def __str__(self) -> str:
         return f"{self.film_id} {self.film_name}"
+
+class User(models.Model):
+    user_id = models.AutoField(primary_key=True)
+    first_name = models.CharField()
+    last_name = models.CharField()
+    email = models.EmailField()
+    password = models.CharField()
