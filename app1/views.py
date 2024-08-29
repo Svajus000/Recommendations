@@ -30,8 +30,15 @@ class UserCreateView(CreateView):
         last_name = form.cleaned_data["last_name"]
         email = form.cleaned_data["email"]
         password = form.cleaned_data["password"]
-        print(first_name, last_name, email, password)
-        return super().form_valid(form)
+        if form.is_valid():
+            user = User.objects.create(first_name=first_name, last_name=last_name, email=email, password=password)
+            user.save()
+            print("success")
+            return super().form_valid(form)
+        else: 
+            print("false")
+            
+       
     
 class CreateView(generics.ListCreateAPIView):
     queryset = Film.objects.all()
