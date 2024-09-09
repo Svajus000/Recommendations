@@ -48,28 +48,20 @@
     <!-- <--------------------------------------------------------------------------------------------------------------------->
     <div class="header-section">
       <div class="header">
-        <form class="form_container">
+        <form class="form_container" method="post">
+          {% csrf_token %}
           <h1 class="form_header">Sign In</h1>
           <div class="mb-3 email_input_container">
-            <label for="exampleInputEmail1" class="form-label"
-              >Email address</label
+            <label for="{{ form.email.id_for_label }}" class="form-label"
+              >{{ form.email.label }}</label
             >
-            <input
-              type="email"
-              class="form-control email_input"
-              id="exampleInputEmail1"
-              aria-describedby="emailHelp"
-            />
+            {{ form.email }} {{ form.email.errors }}
           </div>
           <div class="mb-3 password_input_container">
-            <label for="exampleInputPassword1" class="form-label"
-              >Password</label
+            <label for="{{ form.password1.id_for_label }}" class="form-label"
+              >{{ form.password1.label }}</label
             >
-            <input
-              type="password"
-              class="form-control password_input"
-              id="exampleInputPassword1"
-            />
+            {{ form.password1 }} {{ form.password1.errors }}
           </div>
 
           <button type="submit" class="btn btn-primary submit_button">

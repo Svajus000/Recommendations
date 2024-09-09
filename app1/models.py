@@ -1,9 +1,23 @@
+from typing import Any
+from django.contrib.auth.base_user import AbstractBaseUser
 from django.db import models
 from django.forms import ModelForm
+from django.contrib.auth.backends import ModelBackend
+from django.contrib.auth import get_user_model
+from django.http import HttpRequest
 # Create your models here.
 
-
-
+# class EmailBackend(ModelBackend):
+#     def authenticate(self, request, username=None, password=None, **kwargs):
+#         UserModel = get_user_model()
+#         try:
+#             user = UserModel.objects.get(email=username)
+#         except UserModel.DoesNotExist:
+#             return None
+#         else:
+#             if user.check_password(password):
+#                 return user
+#         return None
     
 class Category(models.Model):
     category_id = models.AutoField(primary_key=True)
