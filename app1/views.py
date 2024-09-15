@@ -1,6 +1,6 @@
 from django.shortcuts import render
-from django.views.generic import TemplateView, ListView, FormView, CreateView
-from django.contrib.auth.views import LoginView
+from django.views.generic import TemplateView, FormView
+# from django.contrib.auth.views import LoginView
 from django.contrib.auth import login, authenticate
 from django.contrib.auth.models import User
 from django.urls import reverse_lazy
@@ -17,22 +17,23 @@ class LandingView(TemplateView):
 class CreateRecommendationView(TemplateView):
     template_name = "createRecommendation.html"
 
-class AuthenticateView(LoginView):
-    template_name = "login.html"
-    form_class = CustomUserCreationForm
-    redirect_authenticated_user = True
+# class AuthenticateView(LoginView):
+#     template_name = "login.html"
+#     form_class = CustomUserCreationForm
+#     redirect_authenticated_user = True
     
-    def form_valid(self, form):
-        email = form.cleaned_data["email"]
-        password = form.cleaned_data["password1"]
-        print(email, password)
-        if form.is_valid():
-            user = authenticate(email=email, password=password)
-            if user is None:
-                print("There is no such an User")
-            else:
-                print("Succcess")
+#     def form_valid(self, form):
+#         email = form.cleaned_data["email"]
+#         password = form.cleaned_data["password1"]
+#         print(email, password)
+#         if form.is_valid():
+#             user = authenticate(email=email, password=password)
+#             if user is None:
+#                 print("There is no such an User")
+#             else:
+#                 print("Succcess")
     
+
 class UserCreateView(FormView):
     template_name = "register.html"
     form_class = CustomUserCreationForm

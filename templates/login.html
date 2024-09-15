@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-{% load static %}
+{% load static %} {% load widget_tweaks %}
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -53,20 +53,23 @@
           <h1 class="form_header">Sign In</h1>
           <div class="mb-3 email_input_container">
             <label for="{{ form.email.id_for_label }}" class="form-label"
-              >{{ form.email.label }}</label
+              >{{ form.username.label }}</label
             >
-            {{ form.email }} {{ form.email.errors }}
+            {{ form.username|add_class:'form-control' }}
+            {{form.username.errors}}
           </div>
           <div class="mb-3 password_input_container">
             <label for="{{ form.password1.id_for_label }}" class="form-label"
-              >{{ form.password1.label }}</label
+              >{{ form.password.label }}</label
             >
-            {{ form.password1 }} {{ form.password1.errors }}
+            {{ form.password|add_class:'form-control' }}
+            {{form.password.errors}}
           </div>
 
           <button type="submit" class="btn btn-primary submit_button">
             Sign In
           </button>
+
           <div class="registration_buttons">
             <button type="button" class="btn register_button">Register</button>
             <button type="button" class="btn google_button">Google</button>
