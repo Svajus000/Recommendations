@@ -1,0 +1,50 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.header-section {
+  display: flex;
+  width: 100vw;
+  height: 94vh;
+  background-image: url("../images/background_clean.jpg");
+  background-size: cover;
+  background-position-y: -8rem;
+  font-family: "Roboto", sans-serif;
+  font-style: italic;
+  align-items: center;
+  justify-content: center;
+}
+
+.header {
+  display: flex;
+}
+
+.card {
+  display: inline-block;
+  width: 12rem;
+  height: 18rem;
+  margin: 2rem;
+  padding: 0;
+  border: 0;
+}
+
+.card-body {
+  height: 100%;
+  width: 100%;
+  padding: 0;
+}
+
+.add-film {
+  display: flex;
+  height: 100%;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+}
+
+.add-film:hover,
+.card-body:hover {
+  filter: brightness(70%);
+}
