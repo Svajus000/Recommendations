@@ -26,7 +26,7 @@ urlpatterns = [
     path('register/', UserCreateView.as_view(), name="register"),
     path('login/', LoginView.as_view(template_name="login.html"), name="login"),
     path('logout/', LogoutView.as_view(), name="logout"),
-    path('createfilm/', CreateFilmView.as_view(), name="createFilm"),
+    path('createRecommendation/createfilm/', CreateFilmView.as_view(), name="createFilm"),
     path('filmRecommendations/', FilmListView.as_view(), name="filmRecommendations"), 
     path('api/', include('app1.urls'))
 

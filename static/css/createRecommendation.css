@@ -7,9 +7,13 @@
   display: flex;
   width: 100vw;
   height: 94vh;
-  background-color: #000000;
-  justify-content: center;
+  background-image: url("../images/background_clean.jpg");
+  background-size: cover;
+  background-position-y: -8rem;
+  font-family: "Roboto", sans-serif;
+  font-style: italic;
   align-items: center;
+  justify-content: center;
 }
 
 .header {
@@ -30,40 +34,38 @@
   margin: 2rem;
   padding: 0;
   border: 0;
-  opacity: 10%;
+  opacity: 30%;
 }
 
 .card-body {
+  display: flex;
   height: 100%;
   width: 100%;
   padding: 0;
   background-color: white;
+  align-items: center;
+  justify-content: center;
 }
 
 .add-film {
-  display: flex;
   height: 100%;
   width: 100%;
-  justify-content: center;
-  align-items: center;
-  text-decoration: none;
 }
 
-.add-film:hover,
-.card-body:hover {
+.plus:hover,
+.card-body:hover,
+.card:hover {
   filter: brightness(70%);
 }
 
 .plus {
   display: flex;
-  height: 15%;
-  width: 23%;
-  background-color: #0f0f0f85;
-  color: white;
-
-  border-radius: 50%;
+  height: 100%;
+  width: 100%;
+  color: black;
+  text-decoration: none;
   font-size: 2rem;
+  padding-bottom: 5px;
   align-items: center;
   justify-content: center;
-  padding-bottom: 5px;
 }

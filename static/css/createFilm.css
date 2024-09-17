@@ -2,19 +2,58 @@
   display: flex;
   width: 100vw;
   height: 94vh;
-  background-color: #000000;
-  justify-content: center;
+  background-image: url("../images/background_clean.jpg");
+  background-size: cover;
+  background-position-y: -8rem;
+  font-family: "Roboto", sans-serif;
+  font-style: italic;
   align-items: center;
+  justify-content: center;
 }
 
 .header {
   width: 60%;
   height: 100%;
-  background-color: #0f0f0f85;
+  background-color: #0f0f0f4d;
   padding: 0 2rem;
 }
 
 .heading {
-  margin: 2rem 2rem;
+  margin: 3.75rem 1.75rem;
+  font-weight: 600;
+  font-size: 2.5rem;
   color: white;
+}
+
+.form-large-label {
+  display: block;
+  margin: 1.75rem 1.75rem 0.5rem 1.75rem;
+  font-size: 1.75rem;
+}
+
+.form-label {
+  display: inline-block;
+  margin: 1.75rem 1.25rem 0.5rem 1.75rem;
+  font-size: 1.75rem;
+}
+
+.form-large-input {
+  margin: 0rem 1.75rem;
+  border-radius: 5px;
+  height: 10rem;
+  width: 33.5rem;
+  box-sizing: border-box;
+  line-height: 1.5;
+  font-size: 1rem;
+  max-height: 20rem;
+}
+
+.form-input {
+  display: inline-block;
+  border-radius: 5px;
+  width: 10rem;
+}
+
+.form-button {
+  margin: 3.75rem 1.75rem;
 }

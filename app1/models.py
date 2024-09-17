@@ -20,7 +20,7 @@ class Film(models.Model):
     date = models.DateField()
     image = models.ImageField()
     category = models.ForeignKey(Category, on_delete=models.CASCADE)
-    
+    review = models.CharField(default="")
 
 
     def __str__(self) -> str:
